@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Digital Art Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="brand">Digital Art Gallery</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="upload.html" id="uploadLink">Upload</a>
+            <a href="profile.html" id="profileLink">Profile</a>
+            <a href="login.html" id="authLink">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <input id="search" placeholder="Search artworks or artisans">
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="Painting">Painting</option>
+                <option value="3D">3D Art</option>
+                <option value="Anime">Anime</option>
+            </select>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <!-- JS will inject cards here -->
+        </section>
+    </main>
+
+    <template id="cardTpl">
+        <article class="card">
+            <img class="artImg" src="" alt="art">
+            <div class="meta">
+                <h3 class="title"></h3>
+                <p class="artist"></p>
+                <p class="desc"></p>
+                <div class="price"></div>
+                <div class="cardActions">
+                    <button class="likeBtn">❤ <span class="likes">0</span></button>
+                    <button class="commentBtn">💬</button>
+                    <button class="buyBtn primary">Buy Now</button>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <!-- Add checkout modal -->
+    <div id="checkoutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div id="buyerInfoSection" class="checkout-section">
+                <h2>Buyer Information</h2>
+                <form id="buyerForm">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit" class="primary">Continue to Payment</button>
+                </form>
+            </div>
+
+            <div id="paymentSection" class="checkout-section" style="display: none;">
+                <h2>Payment Details</h2>
+                <div class="payment-card">
+                    <p>Total Amount: <span id="totalAmount"></span></p>
+                    <button id="payNowButton" class="primary">Pay Now</button>
+                </div>
+            </div>
+
+            <div id="successSection" class="checkout-section" style="display: none;">
+                <h2>Payment Successful!</h2>
+                <p>Thank you for your purchase.</p>
+                <button id="downloadButton" class="primary">Download Artwork</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

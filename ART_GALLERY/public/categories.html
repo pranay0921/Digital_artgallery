@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Categories - Digital Art Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="brand">Digital Art Gallery</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="upload.html" id="uploadLink">Upload</a>
+            <a href="profile.html" id="profileLink">Profile</a>
+            <a href="login.html" id="authLink">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Browse by Category</h2>
+        <div class="categories-grid">
+            <a href="#" class="category-card" data-category="Painting">
+                <img src="images/paint.png" alt="Painting">
+                <h3>Painting</h3>
+            </a>
+            <a href="#" class="category-card" data-category="3D">
+                <img src="images/3d.png" alt="3D Art">
+                <h3>3D Art</h3>
+            </a>
+            <a href="#" class="category-card" data-category="Digital">
+                <img src="images/anime.jpg" alt="anime">
+                <h3>Digital Art</h3>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/categories.js"></script>
+</body>
+</html>

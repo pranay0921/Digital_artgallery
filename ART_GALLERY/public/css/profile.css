@@ -1,0 +1,146 @@
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;      /* circular */
+  object-fit: cover;       /* crop to fill */
+  border: 3px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.profile {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+#profileCard {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profile-image-container {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 15px;
+  background: linear-gradient(145deg, #fdfdfd, #f0f0f0); /* subtle gradient */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: inline-block;
+}
+
+#profileDetails {
+    flex: 1;
+    padding: 15px 0;
+}
+
+#profileDetails h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+}
+
+#profileDetails p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.profile-image-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#profilePicInput {
+  display: none;
+}
+
+.profile-image-container .btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #6c63ff;        /* vibrant button color */
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.profile-image-container .btn:hover {
+  background: #5848c2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.artwork-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+#editArtworkModal .modal-content {
+    max-width: 600px;
+    padding: 24px;
+}
+
+#editArtworkModal .form-group {
+    margin-bottom: 16px;
+}
+
+#editArtworkModal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#editArtworkModal input,
+#editArtworkModal textarea,
+#editArtworkModal select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#editArtworkModal textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.gallery {
+    margin-top: 30px;
+}
+
+.gallery h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}

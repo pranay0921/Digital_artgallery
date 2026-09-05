@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Moderation - Digital Art Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <nav class="admin-sidebar">
+            <div class="admin-brand">
+                <h2>Admin Moderation</h2>
+            </div>
+            <ul class="admin-menu">
+                <li class="active" data-page="dashboard">
+                    <span class="icon">📊</span> Dashboard
+                </li>
+                <li data-page="users">
+                    <span class="icon">👥</span> Users
+                </li>
+                <li data-page="artworks">
+                    <span class="icon">🎨</span> Artworks
+                </li>
+                <li id="logoutBtn">
+                    <span class="icon">🚪</span> Logout
+                </li>
+            </ul>
+        </nav>
+
+        <main class="admin-content">
+            <div id="dashboardPage" class="admin-page active">
+                <h2>Moderation Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Active Users</h3>
+                        <p id="activeUsers">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Banned Users</h3>
+                        <p id="bannedUsers">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Artworks</h3>
+                        <p id="totalArtworks">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Reported Content</h3>
+                        <p id="reportedContent">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="usersPage" class="admin-page">
+                <h2>User Management</h2>
+                <div class="filters">
+                    <select id="userStatusFilter">
+                        <option value="all">All Users</option>
+                        <option value="active">Active</option>
+                        <option value="banned">Banned</option>
+                    </select>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+
+            <div id="artworksPage" class="admin-page">
+                <h2>Artwork Moderation</h2>
+                <div class="filters">
+                    <select id="artworkStatusFilter">
+                        <option value="all">All Artworks</option>
+                        <option value="reported">Reported</option>
+                    </select>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Artist</th>
+                            <th>Category</th>
+                            <th>Reports</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="artworksTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categoriesTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals for Add/Edit operations -->
+    <div id="userModal" class="modal">
+        <!-- User form modal content -->
+    </div>
+
+    <div id="artworkModal" class="modal">
+        <!-- Artwork form modal content -->
+    </div>
+
+    <div id="categoryModal" class="modal">
+        <!-- Category form modal content -->
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+/* ==============================
+   Global & Reset
+============================== */
+:root {
+    --bg: #f7f8f7;
+    --card: #96A78D;
+    --muted: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: #111;
+}
+
+/* ==============================
+   Navigation
+============================== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #111;
+    color: #fff;
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 12px;
+    text-decoration: none;
+}
+
+/* ==============================
+   Layout Containers
+============================== */
+.container {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* ==============================
+   Gallery & Card Styles
+============================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card .artImg {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.card .meta {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .title {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card .artist {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.card .desc {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card .price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c5282;
+    margin-bottom: 12px;
+}
+
+.cardActions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+/* ==============================
+   Forms & Buttons
+============================== */
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.primary {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.primary:hover {
+    background: #0056b3;
+}
+
+/* ==============================
+   Artwork Details
+============================== */
+.artwork-detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: #fff;
+    margin: 2rem;
+    border-radius: 8px;
+}
+
+.comments-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.artwork-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* ==============================
+   Authentication
+============================== */
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+.auth .card.small {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.auth-links {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+.auth-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   Profile Page
+============================== */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.profile {
+    max-width: 800px;   /* narrower container */
+    margin: 15px auto;  /* less top & bottom margin */
+    padding: 0 15px;    /* less side padding */
+}
+
+#profileCard {
+    margin-bottom: 15px;  /* reduced gap before artworks */
+    padding: 15px;        /* smaller padding inside card */
+    background: #d4a2a2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* tighter spacing between avatar and details */
+}
+
+#profileDetails {
+    flex: 1;
+    padding: 10px 0; /* less vertical spacing */
+}
+
+#profileDetails h3 {
+    margin-bottom: 10px; /* smaller gap under name */
+    font-size: 1.3rem;   /* slightly smaller text */
+}
+
+#profileDetails p {
+    margin: 6px 0; /* tighter spacing for details */
+}
+
+.profile-image-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#profilePicInput {
+    display: none;
+}
+
+.profile-image-container .btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #6c63ff;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.profile-image-container .btn:hover {
+    background: #5848c2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   Modal
+============================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none; /* keep hidden until triggered */
+}
+
+.modal-content {
+    background: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#editArtworkModal .modal-content {
+    max-width: 600px;
+    padding: 24px;
+}
+
+#editArtworkModal .form-group {
+    margin-bottom: 16px;
+}
+
+#editArtworkModal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#editArtworkModal input,
+#editArtworkModal textarea,
+#editArtworkModal select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#editArtworkModal textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ==============================
+   Checkout
+============================== */
+.checkout-section {
+    margin: 20px 0;
+}
+
+.checkout-section input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ==============================
+   Categories
+============================== */
+.categories-grid {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+.category-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    background: #f4f4f4;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.category-card:last-child {
+    border-right: none;
+}
+
+.category-card img {
+    max-width: 80%;
+    max-height: 50%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    background: #e1f0ff;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: #072742;
+}
+
+/* ==============================
+   Admin Dashboard
+============================== */
+.admin-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.admin-sidebar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.tab-btn:hover {
+    background: #f0f0f0;
+}
+
+.tab-btn.active {
+    background: #007bff;
+    color: #fff;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.category-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.category-form button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
